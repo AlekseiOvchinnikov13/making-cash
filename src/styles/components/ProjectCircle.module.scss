@@ -1,0 +1,89 @@
+@import '../variables.module';
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 30%, 0);
+  }
+}
+
+.projectCircle {
+  background: $GRADIENT_AQUA_BLUE;
+  border-radius: 50%;
+  width: 100%;
+  height: .125em;
+
+  display: grid;
+  place-items: center;
+
+  &:hover, &:focus {
+    .img {
+      transform: scale(1.05);
+    }
+
+    .img:after, .img:before {
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+  }
+
+  .img {
+    width: .038888em;
+    height: .038888em;
+    position: relative;
+    margin-top: -.02083em;
+
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150%;
+      height: 150%;
+      border-radius: 50%;
+    }
+
+    &:after {
+      border: 1px solid $WHITE_COLOR;
+    }
+
+    &:before {
+      border: 3px solid $AQUAMARINE_COLOR;
+      filter: blur(2px) drop-shadow(0px 0px 60px $AQUAMARINE_COLOR) drop-shadow(0px 0px 30px $AQUAMARINE_COLOR) drop-shadow(0px 0px 10px $AQUAMARINE_COLOR);
+    }
+
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .projectTitle {
+    font-size: .015277em;
+    font-weight: 700;
+    color: $WHITE_COLOR;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: .625em;
+  }
+
+  .apy {
+    font-family: $FONT_FAMILY_MONTSERRAT;
+    font-weight: 800;
+    font-size: .02222em;
+    color: $AQUAMARINE_COLOR;
+    text-transform: capitalize;
+  }
+
+  .projectLink {
+    padding: .0069em;
+    animation: fadeInUp 2.5s ease-in-out infinite;
+  }
+}

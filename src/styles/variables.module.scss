@@ -18,6 +18,7 @@ $FONT_FAMILY_PLAY: 'Play', sans-serif;
 $FONT_FAMILY_MONTSERRAT: 'Montserrat', sans-serif;
 $FONT_FAMILY_QUICKSAND: 'Quicksand', sans-serif;
 
-/*:export {
-  accentOrangeColor: $ACCENT_ORANGE_COLOR;
-}*/
+:export {
+  aquamarineColor: $AQUAMARINE_COLOR;
+  whiteColor: $WHITE_COLOR;
+}

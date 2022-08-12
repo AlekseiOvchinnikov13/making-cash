@@ -1,0 +1,36 @@
+.arrowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.long {
+  width: max(.0201388em, 39px);
+  height: max(.00694em, 18px);
+}
+
+.short {
+  height: max(.00694em, 6px);
+  width: max(.00486em, 8px);
+}
+
+.up {
+  transform: rotate(-90deg);
+}
+
+.down {
+  transform: rotate(90deg);
+}
+
+.right {
+  transform: rotate(0deg);
+}
+
+.left {
+  transform: rotate(180deg);
+}
