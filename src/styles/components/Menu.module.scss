@@ -1,0 +1,133 @@
+@import '../variables.module';
+
+.menu {
+  .navigation {
+    font-size: .01111em;
+
+    .menuList {
+      display: flex;
+      align-items: center;
+
+      .link {
+        padding: 0.625em;
+        color: $LIGHT_GRAY_COLOR;
+        text-transform: capitalize;
+        transition: color .3ms ease-in-out;
+
+        &:hover, &:focus {
+          color: $AQUAMARINE_COLOR;
+        }
+      }
+
+      .link + .link {
+        margin-left: 1.25em;
+      }
+
+      .linkActive {
+        color: $AQUAMARINE_COLOR;
+      }
+    }
+  }
+}
+
+.menuMobile {
+  padding-left: 0;
+
+  .navigation {
+    position: absolute;
+    z-index: 20;
+    left: 100vw;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    visibility: hidden;
+    opacity: 0;
+
+    font-size: 1em;
+    padding: .065em;
+    //background: $MENU_MOBILE_BACKGROUND_COLOR;
+
+    transition: all .3s ease-in-out;
+
+    .menuList {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: .03529em;
+
+      .link {
+        font-size: .0235em;
+        font-weight: 600;
+        padding: .625em .625em .625em 0;
+      }
+
+      .link + .link {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .burger {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 2em;
+    height: 1.2em;
+    z-index: 25;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .stick {
+      width: 100%;
+      height: 2px;
+      //background-color: $WIREFRAME_WHITE_COLOR;
+      transition: all .3s ease-in-out;
+    }
+
+    .middleStick {
+      opacity: 1;
+    }
+  }
+}
+
+.menuMobileOpen {
+  .navigation {
+    visibility: visible;
+    opacity: 1;
+    left: 0;
+  }
+
+  .burger {
+    justify-content: center;
+
+    .topStick {
+      transform: rotate(-45deg);
+      margin-bottom: -2px;
+    }
+
+    .middleStick {
+      opacity: 0;
+    }
+
+    .bottomStick {
+      transform: rotate(45deg);
+      margin-top: -2px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .menuMobile .burger {
+    width: 1.8em;
+    height: 1.2em;
+  }
+  .menuMobile .navigation .menuList {
+    padding-top: .07em;
+  }
+  .menuMobile .navigation .menuList .link {
+    font-size: .04444em;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../variables.module';
+
+.sectionTitle {
+  font-size: max(48px, .04444em);
+  font-weight: 400;
+  color: $AQUAMARINE_COLOR;
+  text-transform: uppercase;
+  text-align: center;
+
+  margin-top: 1.875em;
+}

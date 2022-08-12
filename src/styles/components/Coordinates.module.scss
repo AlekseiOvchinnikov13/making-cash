@@ -1,0 +1,39 @@
+@import '../variables.module';
+
+.coordinates {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .020833em;
+  padding: .03472em 0 .09027em;
+
+  .contactLink {
+    font-size: .01944em;
+    font-weight: 700;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    .contactText {
+      color: $WHITE_COLOR;
+      margin-left: .64285em;
+    }
+
+    .icon {
+      width: 1em;
+      height: 1em;
+      position: relative;
+    }
+  }
+
+  .copyright {
+    font-size: .01944em;
+    font-weight: 700;
+    color: rgba($AQUAMARINE_COLOR, .3);
+    padding-top: 2em;
+
+    grid-column: 1 / span 2;
+    place-self: center;
+  }
+}
+

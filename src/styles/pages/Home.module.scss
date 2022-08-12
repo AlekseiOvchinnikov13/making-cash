@@ -1,0 +1,40 @@
+@import '../variables.module.scss';
+
+.section {
+  padding-top: .08333em;
+}
+
+.topSection {
+  .subtitle {
+    font-size: max(24px, .025em);
+    font-weight: 400;
+    text-align: center;
+    color: $AQUAMARINE_COLOR;
+  }
+
+  .title {
+    font-family: $FONT_FAMILY_QUICKSAND;
+    font-size: max(48px, .09722em);
+    line-height: 1;
+    font-weight: 300;
+    text-align: center;
+    color: $WHITE_COLOR;
+    -webkit-text-stroke: 2px $AQUAMARINE_COLOR;
+    filter: blur(1px);
+    text-shadow: 0 0 60px $AQUAMARINE_COLOR, 0 0 30px $AQUAMARINE_COLOR, 0 0 10px $AQUAMARINE_COLOR;
+    margin: .22857em 0;
+  }
+
+  .text {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.projectSection {
+
+}
+
+
+
+

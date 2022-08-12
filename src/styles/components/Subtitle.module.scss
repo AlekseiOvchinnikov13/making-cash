@@ -1,0 +1,7 @@
+@import '../variables.module';
+
+.subtitle {
+  font-size: max(20px, .01666em);
+  color: $PRIMARY_GRAY_COLOR;
+  text-align: center;
+}

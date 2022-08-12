@@ -1,0 +1,19 @@
+import {CONTACTS_DATA} from '../../data/contacts';
+import Contact from './Contact';
+import styles from '../../styles/components/Coordinates.module.scss';
+
+const Coordinates = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <div className={styles.coordinates}>
+      {CONTACTS_DATA.map(contact =>
+        <Contact key={contact.label} data={contact}/>
+      )}
+      <p className={styles.copyright}>making.cash &copy;&nbsp;2019-{currentYear}</p>
+    </div>
+  );
+};
+
+
+export default Coordinates;
