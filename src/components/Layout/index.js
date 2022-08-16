@@ -3,7 +3,7 @@ import {isBrowser} from '../../utils';
 import Head from 'next/head';
 import Header from '../Header';
 import Footer from '../Footer';
-import styles from '../../styles/Components/Layout.module.scss';
+import styles from '../../styles/components/Layout.module.scss';
 
 const Layout = ({children}) => {
   const [, setSize] = useState([0, 0]);
