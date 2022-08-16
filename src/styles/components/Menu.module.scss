@@ -46,7 +46,7 @@
 
     font-size: 1em;
     padding: .065em;
-    //background: $MENU_MOBILE_BACKGROUND_COLOR;
+    background: $BLACK_COLOR;
 
     transition: all .3s ease-in-out;
 
@@ -83,7 +83,7 @@
     .stick {
       width: 100%;
       height: 2px;
-      //background-color: $WIREFRAME_WHITE_COLOR;
+      background-color: $WHITE_COLOR;
       transition: all .3s ease-in-out;
     }
 

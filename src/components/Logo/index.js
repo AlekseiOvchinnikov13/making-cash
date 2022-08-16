@@ -1,12 +1,12 @@
 import LogoSvg from './images/logo.svg';
 import Link from 'next/link';
 import ImageContainer from '../ImageContainer';
+import styles from '../../styles/components/Logo.module.scss';
 
-const Logo = ({className}) => (
-
+const Logo = () => (
   <Link href="/">
-    <a style={{width: '33%'}}>
-      <div className={className}>
+    <a className={styles.linkLogo}>
+      <div className={styles.logo}>
         <ImageContainer
           src={LogoSvg}
           alt="logo"

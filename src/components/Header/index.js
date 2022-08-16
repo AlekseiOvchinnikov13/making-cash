@@ -10,12 +10,12 @@ const Header = () => {
   useEffect(() => {
     setIsMobileState(isMobile());
   }, [isMobile()]);
-  
+
   return (
     <header className={styles.header}>
       <div className={`${styles.headerWrapper} container`}>
         <Menu isMobile={isMobileState}/>
-        <Logo className={styles.logo}/>
+        <Logo/>
         {!isMobileState && <CalculatorButton/>}
       </div>
     </header>

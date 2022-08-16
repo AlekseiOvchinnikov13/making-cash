@@ -1,7 +1,7 @@
 @import '../variables.module.scss';
 
 .section {
-  padding-top: .08333em;
+  padding-top: max(.08333em, 55px);
 }
 
 .BgAboveTheFold {
@@ -74,18 +74,133 @@
 }
 
 .projectSection {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, .125em);
-  place-items: center;
-  place-content: center;
-  gap: .0666em max(50px, .034722em);
-
   position: relative;
+
+  .projectWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(150px, .125em));
+    place-items: center;
+    place-content: center;
+    gap: max(60px, .0666em) max(20px, .034722em);
+  }
+
+  .readMoreProjects {
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+  }
 }
 
 .aboutSection {
+  .aboutSecondTitle {
+    font-size: max(36px, .02777em);
+    margin-top: 2.1em;
+  }
 
+  .aboutSecondSubtitle {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projectSection {
+    .projectWrapper {
+      grid-template-rows: repeat(2, auto);
+      grid-auto-rows: 0;
+      transition: all .4s ease-in-out;
+
+      padding-bottom: 25px;
+
+      div {
+        transition: all .2s ease-in-out;
+      }
+
+      div:nth-child(n+9) {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+  }
+  .projectSectionOpen {
+    .projectWrapper {
+      grid-auto-rows: 150px;
+
+      div:nth-child(n+9) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .projectSection {
+    .projectWrapper {
+      div:nth-child(n+7) {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    .readMoreProjects {
+      margin-top: -60px;
+    }
+  }
+  .projectSectionOpen {
+    .projectWrapper {
+      div:nth-child(n+7) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .readMoreProjects {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .projectSection {
+    .projectWrapper {
+      div:nth-child(n+5) {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    .readMoreProjects {
+      margin-top: -240px;
+    }
+  }
+  .projectSectionOpen {
+    .projectWrapper {
+      div:nth-child(n+5) {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    .readMoreProjects {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .projectSection {
+    .projectWrapper {
+      grid-template-columns: repeat(auto-fill, 120px);
+      row-gap: .10526em;
+    }
+    .readMoreProjects {
+      margin-top: -180px;
+    }
+  }
+  .projectSectionOpen {
+    .readMoreProjects {
+      margin-top: 0;
+    }
+  }
 }
 
 

@@ -2,7 +2,6 @@ import styles from '../../styles/components/ProjectCircle.module.scss';
 import ImageContainer from '../ImageContainer';
 import {useEffect, useState} from 'react';
 import {PROJECT_DATA} from '../../data/projects';
-import Link from 'next/link';
 import Arrow from '../Arrow';
 import {whiteColor} from '../../styles/variables.module.scss';
 
@@ -13,10 +12,10 @@ const ProjectCircle = ({
     id
   }
 }) => {
-  const [projectApy, setProjectApy] = useState();
+  const [projectStaticData, setProjectStaticData] = useState();
 
   useEffect(() => {
-    setProjectApy(PROJECT_DATA.find(project => project.id === id)?.apy);
+    setProjectStaticData(PROJECT_DATA.find(project => project.id === id));
   }, [id]);
 
   return (
@@ -27,12 +26,12 @@ const ProjectCircle = ({
         alt={name}
       />
       <p className={styles.projectTitle}>{name}</p>
-      <p className={styles.apy}>{projectApy ? projectApy : 'soon'}</p>
-      <Link href={'/'}>
-        <a className={styles.projectLink}>
-          <Arrow isLong={false} direction={'down'} fillColor={whiteColor}/>
-        </a>
-      </Link>
+      <p className={styles.apy}>{projectStaticData?.apy ? projectStaticData.apy : 'soon'}</p>
+      {/*<Link >*/}
+      <a href={projectStaticData?.link} className={styles.projectLink} target={'_blank'} rel="noreferrer">
+        <Arrow isLong={false} direction={'down'} fillColor={whiteColor}/>
+      </a>
+      {/*</Link>*/}
     </div>
   );
 };

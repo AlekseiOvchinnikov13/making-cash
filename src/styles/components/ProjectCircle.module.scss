@@ -16,7 +16,7 @@
   background: $GRADIENT_AQUA_BLUE;
   border-radius: 50%;
   width: 100%;
-  height: .125em;
+  height: max(150px, .125em);
 
   display: grid;
   place-items: center;
@@ -32,8 +32,8 @@
   }
 
   .img {
-    width: .038888em;
-    height: .038888em;
+    width: max(50px, .038888em);
+    height: max(50px, .038888em);
     position: relative;
     margin-top: -.02083em;
 
@@ -66,7 +66,7 @@
   }
 
   .projectTitle {
-    font-size: .015277em;
+    font-size: max(19px, .015277em);
     font-weight: 700;
     color: $WHITE_COLOR;
     text-transform: uppercase;
@@ -77,7 +77,7 @@
   .apy {
     font-family: $FONT_FAMILY_MONTSERRAT;
     font-weight: 800;
-    font-size: .02222em;
+    font-size: max(26px, .02222em);
     color: $AQUAMARINE_COLOR;
     text-transform: capitalize;
   }
@@ -85,5 +85,21 @@
   .projectLink {
     padding: .0069em;
     animation: fadeInUp 2.5s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 380px) {
+  .projectCircle {
+    height: 120px;
+  }
+  .projectCircle .img {
+    height: 40px;
+    width: 40px;
+  }
+  .projectCircle .projectTitle {
+    font-size: 16px;
+  }
+  .projectCircle .apy {
+    font-size: 16px;
   }
 }

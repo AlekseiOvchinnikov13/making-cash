@@ -1,0 +1,20 @@
+.linkLogo {
+  width: 33%;
+
+  .logo {
+    width: .0868em;
+    height: .02916em;
+    position: relative;
+    z-index: 99;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .linkLogo {
+    width: unset;
+  }
+}

@@ -6,9 +6,11 @@
   gap: .020833em;
   padding: .03472em 0 .06027em;
 
-  .contactLink {
-    font-size: .01944em;
+  .contactLink, .copyright{
+    font-size: max(.01944em, 20px);
     font-weight: 700;
+  }
+  .contactLink {
     width: 100%;
 
     display: flex;
@@ -27,13 +29,26 @@
   }
 
   .copyright {
-    font-size: .01944em;
-    font-weight: 700;
     color: rgba($AQUAMARINE_COLOR, .3);
     padding-top: 2em;
 
     grid-column: 1 / span 2;
     place-self: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .coordinates {
+    grid-template-columns: 1fr;
+  }
+  .coordinates .copyright {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 350px) {
+  .coordinates .contactLink, .coordinates .copyright{
+    font-size: 18px;
   }
 }
 
