@@ -1,10 +1,8 @@
-import styles from '../styles/pages/Home.module.scss';
-import Subtitle from '../components/Subtitle';
 import {useGetProjectsQuery} from '../store/projects/projectApi';
 import {PROJECT_DATA} from '../data/projects';
+import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
 import ProjectCircle from '../components/ProjectCircle';
-
 import BgDonutTop from '../../public/assets/images/donut.svg';
 import BgAboveTheFold from '../../public/assets/images/bg-above-the-fold.svg';
 import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-ellipse-projects.svg';
@@ -14,6 +12,7 @@ import {useEffect, useState} from 'react';
 import {isMobile} from '../utils';
 import ReadMore from '../components/ReadMore';
 import SectionTitle from '../components/SectionTitle';
+import styles from '../styles/pages/Home.module.scss';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));

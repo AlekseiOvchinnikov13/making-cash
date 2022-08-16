@@ -1,5 +1,5 @@
 import ReactLoading from 'react-loading';
-import {loader} from '../../styles/Components/Loader.module.scss';
+import {loader} from '../../styles/components/Loader.module.scss';
 import {aquamarineColor} from '../../styles/variables.module.scss';
 
 const Loader = () => (
