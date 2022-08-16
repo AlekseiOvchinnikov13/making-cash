@@ -6,8 +6,8 @@ import MediumIcon from './images/medium.svg';
 
 export const CONTACTS_DATA = [
   {
-    label: 'perfectstake@gmail.com',
-    link: 'mailto:perfectstake@gmail.com',
+    label: 'info@making.cash',
+    link: 'mailto:info@making.cash',
     img: MailIcon
   },
   {
