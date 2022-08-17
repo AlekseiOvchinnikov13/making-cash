@@ -3,7 +3,7 @@ import {PROJECT_DATA} from '../data/projects';
 import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
 import ProjectCircle from '../components/ProjectCircle';
-import BgDonutTop from '../../public/assets/images/donut.svg';
+import BgDonut from '../../public/assets/images/donut.svg';
 import BgAboveTheFold from '../../public/assets/images/bg-above-the-fold.svg';
 import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-ellipse-projects.svg';
 import BgLightEllipseProjects from '../../public/assets/images/light-ellipse-projects.svg';
@@ -13,6 +13,9 @@ import {isMobile} from '../utils';
 import ReadMore from '../components/ReadMore';
 import SectionTitle from '../components/SectionTitle';
 import styles from '../styles/pages/Home.module.scss';
+import LinkArrow from '../components/LinkArrow';
+import ContactForm from '../components/ContactForm';
+import contact from '../components/Coordinates/Contact';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
@@ -30,7 +33,7 @@ const Home = () => {
       <section className={`${styles.section} ${styles.topSection}`}>
         <ImageContainer
           className={styles.donutTop}
-          src={BgDonutTop}
+          src={BgDonut}
           alt={'donut'}
         />
         <h2 className={styles.subtitle}>Trusted & Secure</h2>
@@ -41,7 +44,8 @@ const Home = () => {
       </section>
       <section
         className={`${styles.section} ${styles.projectSection} ${isProjectsOpen ? styles.projectSectionOpen : ''}`}
-        id={'project'}>
+        id={'project'}
+      >
         <ImageContainer
           className={styles.BgAboveTheFold}
           src={BgAboveTheFold}
@@ -84,6 +88,20 @@ const Home = () => {
           title={'why you can trust us'}
           subtitle={'Our validators are hosted on&nbsp;high-tech dedicated servers from Hetzner, OVH. We&nbsp;have a&nbsp;full backup and monitoring via various sources (grafana, telegram bots, SMS messages) which means that we`re ensuring&nbsp;99% uptime in&nbsp;all networks'}
         />
+        <LinkArrow
+          to={'#contact'}
+          isLong={false}
+          text={'Write to us'}
+          className={styles.writeToUs}
+        />
+      </section>
+
+      <section className={`${styles.section} ${styles.contactSection}`} id={'contact'}>
+        <SectionTitle
+          title={'contact'}
+          subtitle={'Write to&nbsp;us at&nbsp;any time and our manager will be&nbsp;happy to&nbsp;answer you'}
+        />
+        <ContactForm/>
       </section>
     </>
   );

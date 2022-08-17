@@ -99,7 +99,17 @@
   .aboutSecondSubtitle {
     max-width: 80%;
   }
+
+  .writeToUs {
+    justify-content: center;
+    margin-top: 1.25em;
+  }
 }
+
+.contactSection {
+
+}
+
 
 @media (max-width: 1024px) {
   .projectSection {
@@ -156,6 +166,9 @@
     .readMoreProjects {
       margin-top: 0;
     }
+  }
+  .aboutSection .aboutSecondSubtitle {
+    max-width: unset;
   }
 }
 

@@ -1,0 +1,23 @@
+@import '../variables.module';
+
+.linkArrow {
+  font-size: max(24px, .01666em);
+  color: $AQUAMARINE_COLOR;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .arrow {
+      margin-left: 10px;
+    }
+  }
+
+  .arrow {
+    height: max(10px, .41666em);
+    width: max(16px, .66666em);
+
+    margin-left: 5px;
+    transition: all .3s ease-in-out;
+  }
+}

@@ -1,0 +1,105 @@
+@import '../variables.module';
+
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: max(.020833em, 12px);
+
+  margin-top: .05833em;
+
+  .input, .subscribeWrapper, .submitBtn {
+    font-family: $FONT_FAMILY_HELVETICA;
+  }
+
+  .input, .submitBtn {
+    font-weight: 700;
+  }
+
+  .input {
+    font-size: max(16px, .013888em);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+    color: $LIGHT_GRAY_COLOR;
+    background: $INPUTS_BACKGROUND_COLOR_DESKTOP;
+    border: $INPUTS_BORDER;
+    border-radius: .2em;
+    padding: .85em 1.6em;
+
+    &::placeholder {
+      color: rgba($LIGHT_GRAY_COLOR, .4);
+    }
+  }
+
+  .messageInput {
+    resize: none;
+    overflow: auto;
+  }
+
+  .wrapper {
+    display: grid;
+
+    .subscribeWrapper {
+      font-size: max(14px, .010416em);
+      color: rgba($WHITE_COLOR, .4);
+      font-weight: 400;
+
+      .subscribeInput {
+        margin-right: 5px;
+      }
+    }
+
+    .submitBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid transparent;
+
+      font-size: max(16px, .0125em);
+      color: $WHITE_COLOR;
+      background: $AQUAMARINE_COLOR;
+      border-radius: .44444em;
+
+      transition: all .3s ease-in-out;
+
+      .arrow {
+        margin-left: 5px;
+        transition: all .3s ease-in-out;
+      }
+
+      &:hover {
+        border: 1px solid $AQUAMARINE_COLOR;
+        background: transparent;
+
+        .arrow {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+.text {
+  font-size: max(18px, .01388em);
+  text-align: center;
+  color: $WHITE_COLOR;
+  margin: 2em 0;
+}
+
+@media (max-width: 650px) {
+  .contactForm {
+    grid-template-columns: 1fr;
+
+    .input, .submitBtn {
+      font-weight: 400;
+    }
+
+    .input {
+      background: $INPUTS_BACKGROUND_COLOR_MOBILE;
+    }
+
+    .submitBtn {
+      height: 3em;
+      margin-top: 1.5em;
+    }
+  }
+}
