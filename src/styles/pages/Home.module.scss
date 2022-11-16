@@ -4,46 +4,6 @@
   padding-top: max(.08333em, 55px);
 }
 
-.BgAboveTheFold {
-  position: absolute;
-  bottom: 50%;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: .555555em;
-  z-index: -1;
-}
-
-.projectsEllipseAqua {
-  position: absolute;
-  right: -.065em;
-  bottom: 0;
-  transform: translate(50%, 50%);
-  width: 100%;
-  height: .56875em;
-  z-index: -1;
-}
-
-.projectsEllipseLight {
-  position: absolute;
-  left: -.065em;
-  transform: translate(-50%, 70%);
-  bottom: 0;
-  width: 100%;
-  height: .5555em;
-  z-index: -1;
-}
-
-.donutTop {
-  position: absolute;
-  left: -.065em;
-  top: 0;
-  transform: translate(-50%, 0);
-  width: 100%;
-  height: .41666em;
-  z-index: -1;
-}
-
 .topSection {
   position: relative;
 
@@ -71,6 +31,16 @@
     max-width: 50%;
     margin: 0 auto;
   }
+
+  .donutTop {
+    position: absolute;
+    left: -.065em;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 100%;
+    height: .41666em;
+    z-index: -1;
+  }
 }
 
 .projectSection {
@@ -87,6 +57,35 @@
   .readMoreProjects {
     text-transform: capitalize;
     transition: all .3s ease-in-out;
+  }
+
+  .projectsEllipseAqua,
+  .projectsEllipseLight,
+  .BgAboveTheFold {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+  }
+
+  .projectsEllipseAqua {
+    right: -.065em;
+    bottom: 0;
+    transform: translate(50%, 50%);
+    height: .56875em;
+  }
+
+  .projectsEllipseLight {
+    left: -.065em;
+    transform: translate(-50%, 70%);
+    bottom: 0;
+    height: .5555em;
+  }
+
+  .BgAboveTheFold {
+    bottom: 50%;
+    right: 0;
+    left: 0;
+    height: .555555em;
   }
 }
 
@@ -106,7 +105,43 @@
   }
 }
 
-.contactSection {
+.blogSection {
+  position: relative;
+
+  .postRawWrapper {
+    display: grid;
+    gap: 8px;
+  }
+
+  .sphere, .intersectRight,
+  .intersectLeft {
+    position: absolute;
+    z-index: -1;
+  }
+
+  .sphere {
+    width: 100%;
+    height: .4166666em;
+    bottom: 100%;
+    right: 0;
+    transform: translate(55%, 60%);
+  }
+
+  .intersectRight {
+    height: .347222em;
+    width: .430555em;
+    right: -27%;
+    top: 0;
+  }
+
+  .intersectLeft {
+    width: .625em;
+    height: .472222em;
+    left: -33%;
+    top: 50%;
+    opacity: .6;
+  }
+
 
 }
 

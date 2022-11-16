@@ -14,10 +14,15 @@
   }
 
   .arrow {
-    height: max(10px, .41666em);
-    width: max(16px, .66666em);
+    height: max(10px, .006944rem);
+    width: max(16px, .0111111rem);
 
     margin-left: 5px;
     transition: all .3s ease-in-out;
+  }
+
+  .longArrow {
+    height: max(13px, .009027rem);
+    width: max(30px, .02083rem);
   }
 }

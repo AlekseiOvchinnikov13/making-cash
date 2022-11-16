@@ -12,7 +12,7 @@ const LinkArrow = ({to, text, className, direction, isLong}) => {
           direction={direction ? direction : 'right'}
           isLong={isLong}
           fillColor={aquamarineColor}
-          className={styles.arrow}
+          className={`${styles.arrow} ${isLong ? styles.longArrow : ''}`}
         />
       </a>
     </Link>

@@ -46,6 +46,7 @@ export const PROJECT_DATA = [
     address: '4dfMuh3JVgrKgeWyzbcys2y5H3BJzzTySUmgUkgmuQumDZAK',
     link: 'https://portal.chain.centrifuge.io/#/staking/query/4dfMuh3JVgrKgeWyzbcys2y5H3BJzzTySUmgUkgmuQumDZAK',
     fee: '8%',
+    apy: '4%'
   },
   {
     id: 'agoric',

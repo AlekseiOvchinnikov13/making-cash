@@ -4,7 +4,10 @@ import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
 import ProjectCircle from '../components/ProjectCircle';
 import BgDonut from '../../public/assets/images/donut.svg';
+import BgSphere from '../../public/assets/images/sphere.svg';
 import BgAboveTheFold from '../../public/assets/images/bg-above-the-fold.svg';
+import IntersectRight from '../../public/assets/images/Intersect-right.svg';
+import IntersectLeft from '../../public/assets/images/Intersect-left.svg';
 import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-ellipse-projects.svg';
 import BgLightEllipseProjects from '../../public/assets/images/light-ellipse-projects.svg';
 import ImageContainer from '../components/ImageContainer';
@@ -16,6 +19,10 @@ import styles from '../styles/pages/Home.module.scss';
 import LinkArrow from '../components/LinkArrow';
 import ContactForm from '../components/ContactForm';
 import contact from '../components/Coordinates/Contact';
+import {useDispatch} from 'react-redux';
+import {getPosts} from '../store/posts/postsSlice';
+import usePosts from '../hooks/usePosts';
+import PostRaw from '../components/PostRaw';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
@@ -27,6 +34,13 @@ const Home = () => {
 
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const projectOpenHandler = () => setIsProjectsOpen(!isProjectsOpen);
+
+  const {data: posts, status} = usePosts();
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
 
   return (
     <>
@@ -95,8 +109,46 @@ const Home = () => {
           className={styles.writeToUs}
         />
       </section>
+      <section className={`${styles.section} ${styles.blogSection}`} id={'blog'}>
+        <ImageContainer
+          className={styles.sphere}
+          src={BgSphere}
+          alt={'sphere'}
+        />
+        <ImageContainer
+          className={styles.intersectRight}
+          src={IntersectRight}
+          alt={'shadow'}
+        />
+        <ImageContainer
+          className={styles.intersectLeft}
+          src={IntersectLeft}
+          alt={'shadow'}
+        />
+        <SectionTitle title={'our blog'}/>
+        <div className={styles.postRawWrapper}>
+          {posts.length > 0 && status === 'success'
+            ? posts.map((post, index) =>
+              index < 3 &&
+              <PostRaw
+                key={post.link}
+                data={post}
+              />)
+            : <Loader/>
+          }
+        </div>
 
-      <section className={`${styles.section} ${styles.contactSection}`} id={'contact'}>
+      </section>
+      {/*<section className={`${styles.section}`} id={'faq'}>
+        <SectionTitle title={'faq'}/>
+      </section>
+      <section className={`${styles.section}`} id={'calculator'}>
+        <SectionTitle
+          title={'calculator'}
+          subtitle={'You can choose the most profitable coin for yourself'}
+        />
+      </section>*/}
+      <section className={`${styles.section}`} id={'contact'}>
         <SectionTitle
           title={'contact'}
           subtitle={'Write to&nbsp;us at&nbsp;any time and our manager will be&nbsp;happy to&nbsp;answer you'}
