@@ -1,0 +1,99 @@
+@import "../variables.module";
+
+.accordionItem {
+  background: $CARD_BACKGROUND_COLOR;
+  box-shadow: $CARD_BOX_SHADOW;
+  backdrop-filter: blur(20px);
+  border-radius: 8px;
+  border: 2px solid rgba($AQUAMARINE_COLOR, .2);
+
+  padding: .020833em .047222em;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      color: $WHITE_COLOR;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: max(.019444em, 28px);
+      max-width: 90%;
+    }
+
+    .arrowBtn {
+      width: max(20px, .01388em);
+      height: max(20px, .01388em);
+
+      font-size: 1em;
+      border: none;
+      background: transparent;
+      position: relative;
+
+      &:before, &:after {
+        top: 50%;
+
+        content: '';
+        position: absolute;
+        width: max(12px, .00833em);
+        height: 1px;
+        background: $AQUAMARINE_COLOR;
+        border-radius: 1px;
+
+        transition: all .3s ease-in-out;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+        left: 0;
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+        right: 0;
+      }
+    }
+  }
+
+  .content {
+    color: $LIGHT_GRAY_COLOR;
+    font-weight: 400;
+    font-size: max(.013888em, 20px);
+    line-height: 110%;
+    transition: all .3s ease-in-out;
+
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    padding-top: 0;
+  }
+}
+
+.accordionItemActive {
+  .header {
+    .arrowBtn {
+      &:before, &:after {
+        top: 50%;
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .content {
+    padding-top: 1.6666em;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+  }
+}

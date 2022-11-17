@@ -107,10 +107,17 @@
 
 .blogSection {
   position: relative;
+  display: grid;
 
   .postRawWrapper {
     display: grid;
     gap: 8px;
+  }
+
+  .blogPageArrow {
+    text-transform: capitalize;
+    justify-self: center;
+    margin-top: 2.083em;
   }
 
   .sphere, .intersectRight,
@@ -141,10 +148,36 @@
     top: 50%;
     opacity: .6;
   }
-
-
 }
 
+.faqSection {
+  position: relative;
+
+  .accordionWrapper {
+    display: grid;
+    gap: 8px;
+  }
+
+  .BgAboveTheFold, .halfDonut {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+  }
+
+  .BgAboveTheFold {
+    height: .34722em;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .halfDonut {
+    height: .36111em;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+  }
+}
 
 @media (max-width: 1024px) {
   .projectSection {

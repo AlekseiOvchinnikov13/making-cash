@@ -4,6 +4,7 @@ import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
 import ProjectCircle from '../components/ProjectCircle';
 import BgDonut from '../../public/assets/images/donut.svg';
+import BgHalfDonut from '../../public/assets/images/half-donut.svg';
 import BgSphere from '../../public/assets/images/sphere.svg';
 import BgAboveTheFold from '../../public/assets/images/bg-above-the-fold.svg';
 import IntersectRight from '../../public/assets/images/Intersect-right.svg';
@@ -12,7 +13,6 @@ import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-e
 import BgLightEllipseProjects from '../../public/assets/images/light-ellipse-projects.svg';
 import ImageContainer from '../components/ImageContainer';
 import {useEffect, useState} from 'react';
-import {isMobile} from '../utils';
 import ReadMore from '../components/ReadMore';
 import SectionTitle from '../components/SectionTitle';
 import styles from '../styles/pages/Home.module.scss';
@@ -23,14 +23,17 @@ import {useDispatch} from 'react-redux';
 import {getPosts} from '../store/posts/postsSlice';
 import usePosts from '../hooks/usePosts';
 import PostRaw from '../components/PostRaw';
+import {isMobile} from '../utils';
+import {FAQ_DATA} from '../data/faq';
+import AccordionItem from '../components/AccordionItem';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
 
   const [isMobileState, setIsMobileState] = useState(false);
   useEffect(() => {
-    setIsMobileState(isMobile());
-  }, [isMobile()]);
+    setIsMobileState(isMobile);
+  }, [setIsMobileState]);
 
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const projectOpenHandler = () => setIsProjectsOpen(!isProjectsOpen);
@@ -137,12 +140,33 @@ const Home = () => {
             : <Loader/>
           }
         </div>
-
+        {isMobileState &&
+          <LinkArrow
+            text={'see all'}
+            to={'/blog'}
+            isLong={false}
+            className={styles.blogPageArrow}
+          />}
       </section>
-      {/*<section className={`${styles.section}`} id={'faq'}>
+      <section className={`${styles.section} ${styles.faqSection}`} id={'faq'}>
+        <ImageContainer
+          className={styles.BgAboveTheFold}
+          src={BgAboveTheFold}
+          alt={'shadow'}
+        />
+        <ImageContainer
+          className={styles.halfDonut}
+          src={BgHalfDonut}
+          alt={'donut'}
+        />
         <SectionTitle title={'faq'}/>
+        <div className={styles.accordionWrapper}>
+          {FAQ_DATA.map(item =>
+            <AccordionItem key={item.label} data={item}/>
+          )}
+        </div>
       </section>
-      <section className={`${styles.section}`} id={'calculator'}>
+      {/*<section className={`${styles.section}`} id={'calculator'}>
         <SectionTitle
           title={'calculator'}
           subtitle={'You can choose the most profitable coin for yourself'}
