@@ -52,14 +52,8 @@
       align-items: center;
       justify-content: center;
 
-      border: 1px solid transparent;
-
       font-size: max(16px, .0125em);
-      color: $WHITE_COLOR;
-      background: $AQUAMARINE_COLOR;
       border-radius: .44444em;
-
-      transition: all .3s ease-in-out;
 
       .arrow {
         margin-left: 5px;
@@ -67,9 +61,6 @@
       }
 
       &:hover {
-        border: 1px solid $AQUAMARINE_COLOR;
-        background: transparent;
-
         .arrow {
           margin-left: 10px;
         }

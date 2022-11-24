@@ -4,7 +4,7 @@ import styles from '../../styles/components/CalculatorButton.module.scss';
 
 const CalculatorButton = () =>
   <Link href={menuCalcItem.to}>
-    <a className={styles.calculatorButton}>
+    <a className={`${styles.calculatorButton} buttonCommonStyle`}>
       {menuCalcItem.label}
     </a>
   </Link>;

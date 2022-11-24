@@ -1,5 +1,5 @@
 export const menu = [
-  {label: 'project', to: '/#project'},
+  {label: 'projects', to: '/#projects'},
   {label: 'about Us', to: '/#about-us'},
   {label: 'blog', to: '/#blog'},
   {label: 'FAQ', to: '/#faq'},

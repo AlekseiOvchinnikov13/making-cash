@@ -1,0 +1,187 @@
+@import "../variables.module";
+
+.mainSection {
+  padding-top: .104166em;
+  padding-bottom: .07638em;
+
+  .BgAboveTheFold, .sphere {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+  }
+
+  .BgAboveTheFold {
+    top: -30%;
+    right: 0;
+    left: 0;
+    height: .755555em;
+  }
+
+  .sphere {
+    height: .4166666em;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 0) scale(-1, 1);
+  }
+
+  .topBlock {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: .08333em;
+
+    .title {
+      font-size: min(.076388em, 150px);
+      font-weight: 300;
+      color: $WHITE_COLOR;
+      text-transform: uppercase;
+      text-shadow: 0 0 50px #3EC3B3, 0 0 25px #3EC3B3, 0 0 10px #3EC3B3;
+      filter: blur(1px);
+      justify-self: flex-start;
+    }
+
+    .logo {
+      justify-self: flex-end;
+      position: relative;
+      width: max(.138888em, 150px);
+      height: max(.138888em, 150px);
+      border-radius: 50%;
+      overflow: hidden;
+
+      box-shadow: 0 0 25px #3EC3B3, 0 0 5px #3EC3B3
+    }
+  }
+
+  .middleBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .1041666em;
+    place-items: center;
+
+    .mainIndicator {
+
+      .title {
+        font-family: $FONT_FAMILY_PLAY;
+        font-size: .011111em;
+        line-height: 150%;
+        color: $SECOND_GRAY_COLOR;
+        text-align: center;
+      }
+
+      .value {
+        font-family: $FONT_FAMILY_MONTSERRAT;
+        font-weight: 800;
+        font-size: .022222em;
+        color: $AQUAMARINE_COLOR;
+        text-align: center;
+      }
+    }
+
+    .linkStake {
+      font-family: $FONT_FAMILY_PLAY;
+      font-size: max(18px, .011111em);
+      color: $WHITE_COLOR;
+      border-radius: .55555em;
+      padding: 1em 1.5em;
+      width: min(400px, 22.22em);
+      justify-content: center;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.infoSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: max(.034722em, 30px);
+
+  .descriptionBlock {
+    grid-row: 1 / span 2;
+
+    .text {
+      font-size: max(.0166666em, 14px);
+      line-height: 125%;
+      color: $PRIMARY_GRAY_COLOR;
+    }
+
+    .readMore {
+      text-transform: capitalize;
+      margin-top: 1.6666em;
+      font-size: max(15px, .01666em);
+    }
+  }
+
+  .indicatorsBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .02361em .02777em;
+  }
+}
+
+.infoSectionWithoutDescr {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 900px) {
+  .mainSection {
+    .BgAboveTheFold {
+      top: 10%;
+    }
+
+    .sphere {
+      top: 10%;
+    }
+
+    .topBlock {
+      .title {
+        font-size: .106666em;
+      }
+    }
+
+    .middleBlock {
+      grid-template-columns: 1fr 1fr;
+      gap: max(.05555em, 20px);
+
+      .mainIndicator {
+        .title {
+          font-size: max(.017777em, 16px);
+        }
+
+        .value {
+          font-size: max(.03555em, 32px);
+        }
+      }
+
+      .linkStake {
+        grid-column: 1 / span 2;
+        width: 100%;
+      }
+    }
+  }
+
+  .infoSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .mainSection {
+    .topBlock {
+      .logo {
+        width: 75px;
+        height: 75px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .mainSection {
+    .topBlock {
+      .title {
+        font-size: 32px;
+      }
+    }
+  }
+}

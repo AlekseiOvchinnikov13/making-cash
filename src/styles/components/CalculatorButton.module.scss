@@ -2,21 +2,10 @@
 
 .calculatorButton {
   font-size: .010416em;
-  background-color: $AQUAMARINE_COLOR;
-  color: $WHITE_COLOR;
   border-radius: .6666em;
   padding: .8em 2.666em;
-  border: 1px transparent solid;
-  text-align: center;
   text-transform: capitalize;
   width: 10em;
-
-  transition: all ease-in-out .3s;
-
-  &:hover, &:focus {
-    background: transparent;
-    border: 1px $AQUAMARINE_COLOR solid;
-  }
 }
 
 @media (max-width: 850px) {

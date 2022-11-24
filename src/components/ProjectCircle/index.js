@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import {PROJECT_DATA} from '../../data/projects';
 import Arrow from '../Arrow';
 import {whiteColor} from '../../styles/variables.module.scss';
+import Link from 'next/link';
 
 const ProjectCircle = ({
   data: {
@@ -27,11 +28,11 @@ const ProjectCircle = ({
       />
       <p className={styles.projectTitle}>{name}</p>
       <p className={styles.apy}>{projectStaticData?.apy ? projectStaticData.apy : 'soon'}</p>
-      {/*<Link >*/}
-      <a href={projectStaticData?.link} className={styles.projectLink} target={'_blank'} rel="noreferrer">
-        <Arrow isLong={false} direction={'down'} fillColor={whiteColor}/>
-      </a>
-      {/*</Link>*/}
+      <Link href={`projects/${id}`}>
+        <a className={styles.projectLink}>
+          <Arrow isLong={false} direction={'down'} fillColor={whiteColor}/>
+        </a>
+      </Link>
     </div>
   );
 };

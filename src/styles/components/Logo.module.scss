@@ -16,5 +16,10 @@
 @media (max-width: 1024px) {
   .linkLogo {
     width: unset;
+
+    .logo {
+      width: max(.12109em, 100px);
+      height: max(.040039em, 34px);
+    }
   }
 }

@@ -72,7 +72,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={state.submitting}
-          className={styles.submitBtn}
+          className={`${styles.submitBtn} buttonCommonStyle`}
         >
           Send
           <Arrow fillColor={whiteColor} className={styles.arrow}/>

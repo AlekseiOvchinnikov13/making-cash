@@ -1,4 +1,4 @@
-import {useLayoutEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {isBrowser} from '../../utils';
 import Head from 'next/head';
 import Header from '../Header';
@@ -9,7 +9,7 @@ const Layout = ({children}) => {
   const [, setSize] = useState([0, 0]);
   const updateSize = () => isBrowser() && setSize([window.innerWidth, window.innerHeight]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     isBrowser() && window.addEventListener('resize', updateSize);
     updateSize();
     return () => isBrowser() && window.removeEventListener('resize', updateSize);

@@ -1,0 +1,77 @@
+@import "../variables.module";
+
+.infoCard {
+  font-family: $FONT_FAMILY_PLAY;
+  padding: max(.01388em, 5px) max(.009722em, 5px);
+  background: $INFO_CARD_BACKGROUND;
+  display: grid;
+  gap: .006944em;
+  border-radius: .0069444em;
+
+  .title, .value {
+    text-align: center;
+  }
+
+  .value {
+    font-size: max(14px, .01388em);
+    color: $WHITE_COLOR;
+  }
+
+  .title {
+    font-size: max(12px, .011111em);
+    color: $SECOND_GRAY_COLOR;
+    align-self: flex-end;
+  }
+}
+
+.infoCardAddress {
+  grid-column: 1 / span 3;
+
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  gap: .013888em;
+
+  .value, .title {
+    grid-row: 1;
+  }
+
+  .value {
+    grid-column: 2;
+    overflow: hidden;
+    font-size: max(12px, .011111em);
+    color: $SECOND_GRAY_COLOR;
+    padding: .75em;
+    background: rgba($WHITE_COLOR, 0.02);
+    border: 1px solid rgba($WHITE_COLOR, 0.4);
+    border-radius: .25em;
+    position: relative;
+
+    .copyBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0 20px;
+      height: 100%;
+      border: none;
+      background: $DARK_BLUE_COLOR;
+      font-family: $FONT_FAMILY_PLAY;
+      color: $WHITE_COLOR;
+      text-transform: uppercase;
+    }
+  }
+
+  .title {
+    grid-column: 1;
+    align-self: center;
+
+    font-size: max(14px, .01388em);
+    color: $WHITE_COLOR;
+  }
+}
+
+@media (max-width: 450px) {
+  .infoCard {
+    border-radius: .02222em;
+    gap: 10px;
+  }
+}

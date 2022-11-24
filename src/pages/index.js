@@ -61,7 +61,7 @@ const Home = () => {
       </section>
       <section
         className={`${styles.section} ${styles.projectSection} ${isProjectsOpen ? styles.projectSectionOpen : ''}`}
-        id={'project'}
+        id={'projects'}
       >
         <ImageContainer
           className={styles.BgAboveTheFold}

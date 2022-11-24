@@ -1,3 +1,6 @@
+//TODO удалить, если нет вызовов
+
+
 import {useSelector} from 'react-redux';
 
 const useProjects = () =>

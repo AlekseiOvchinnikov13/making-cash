@@ -5,16 +5,12 @@ export const projectsApi = createApi({
   baseQuery: fetchBaseQuery({baseUrl: 'https://api.coingecko.com/api/v3/coins/'}),
   endpoints: builder => ({
     getProjects: builder.query({
-      query: (
-        ids,
-        vs_currency = 'usd',
-        order = 'market_cap_desc',
-        per_page = 100,
-        page = 1,
-        sparkline = false
-      ) => `markets?ids=${ids}&vs_currency=${vs_currency}&order=${order}&per_page=${per_page}&page=${page}&sparkline=${sparkline}`
+      query: ids => `markets?ids=${ids}&vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+    }),
+    getCoinInfo: builder.query({
+      query: coinId => `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false`
     })
   })
 });
 
-export const {useGetProjectsQuery} = projectsApi;
+export const {useGetProjectsQuery, useGetCoinInfoQuery} = projectsApi;
