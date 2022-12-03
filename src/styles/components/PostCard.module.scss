@@ -1,0 +1,65 @@
+@import "../variables.module";
+
+.postCard {
+  padding: max(.01666em, 16px);
+  background: $GRADIENT_AQUA_BLUE;
+  border-radius: .00694em;
+
+  display: grid;
+  justify-items: center;
+  gap: max(.01041em, 10px);
+
+  .title {
+    font-size: max(.01666em, 19px);
+    color: $WHITE_COLOR;
+
+    display: flex;
+
+    .arrow {
+      margin-left: 1em;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  .text {
+    font-size: max(.01111em, 16px);
+    color: $LIGHT_BLUE_COLOR;
+
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+  }
+
+  .source {
+    font-size: max(.01111em, 16px);
+    color: $WHITE_COLOR;
+
+    span {
+      color: $GRAY_COLOR;
+      font-weight: 700;
+      font-size: max(1.125em, 16px);
+    }
+  }
+
+  &:hover {
+    .title {
+      .arrow {
+        margin-left: 1.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .postCard {
+    .title {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .text {
+      font-size: 14px;
+    }
+  }
+}

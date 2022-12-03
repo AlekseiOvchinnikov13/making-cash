@@ -1,9 +1,11 @@
 @import "../variables.module";
 
-.mainSection {
+.section {
   padding-top: .104166em;
-  padding-bottom: .07638em;
+  padding-bottom: .104166em;
+}
 
+.mainSection {
   .BgAboveTheFold, .sphere {
     position: absolute;
     z-index: -1;
@@ -32,6 +34,7 @@
     margin-bottom: .08333em;
 
     .title {
+      font-family: $FONT_FAMILY_QUICKSAND;
       font-size: min(.076388em, 150px);
       font-weight: 300;
       color: $WHITE_COLOR;
@@ -123,6 +126,44 @@
   grid-template-columns: 1fr;
 }
 
+.blogSection {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: max(.041666em, 30px);
+  position: relative;
+
+  .BgAboveTheFold {
+    position: absolute;
+    z-index: -1;
+    width: 200%;
+    top: -50%;
+    left: 0;
+    height: .825em;
+    transform: translate(-25%, 0);
+  }
+
+  .textBlock {
+    .title {
+      font-family: $FONT_FAMILY_QUICKSAND;
+      text-align: left;
+      font-weight: 300;
+      font-size: max(.034722em, 36px);
+      margin-bottom: max(21px, .8em);
+    }
+
+    .text {
+      text-align: left;
+      max-width: 100%;
+    }
+  }
+
+  .postBlock {
+    display: grid;
+    gap: .02083em;
+  }
+}
+
 @media (max-width: 900px) {
   .mainSection {
     .BgAboveTheFold {
@@ -162,6 +203,16 @@
 
   .infoSection {
     grid-template-columns: 1fr;
+  }
+
+  .blogSection {
+    grid-template-columns: 1fr;
+
+    .textBlock {
+      .title, .text {
+        text-align: center;
+      }
+    }
   }
 }
 

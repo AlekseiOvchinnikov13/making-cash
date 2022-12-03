@@ -7,10 +7,13 @@ import ImageContainer from '../../components/ImageContainer';
 import LinkArrow from '../../components/LinkArrow';
 import {whiteColor} from '../../styles/variables.module.scss';
 import BgAboveTheFold from '../../../public/assets/images/bg-above-the-fold.svg';
+import BgAboveTheFold3 from '../../../public/assets/images/bg-above-the-fold3.svg';
 import BgSphere from '../../../public/assets/images/sphere.svg';
 import InfoCard from '../../components/InfoCard';
 import ReadMore from '../../components/ReadMore';
 import {useState} from 'react';
+import SectionTitle from '../../components/SectionTitle';
+import PostCard from '../../components/PostCard';
 
 
 const Project = () => {
@@ -26,7 +29,7 @@ const Project = () => {
   if (isLoading) return <Loader/>;
   const description = data.description.en;
 
-  const {apy, fee, link, basicInfoList} = PROJECT_DATA.find(item => item.id === id);
+  const {apy, fee, link, basicInfoList, articleList} = PROJECT_DATA.find(item => item.id === id);
   const mainIndicators = [
     {
       label: 'Nominal Reward APY',
@@ -42,7 +45,7 @@ const Project = () => {
 
   return (
     <>
-      <div className={styles.mainSection}>
+      <div className={`${styles.mainSection} ${styles.section}`}>
         <ImageContainer
           className={styles.BgAboveTheFold}
           src={BgAboveTheFold}
@@ -99,6 +102,34 @@ const Project = () => {
               title={title}
               value={value}
               isAddress={title === 'Validator Address'}
+            />
+          )}
+        </div>
+      </div>
+      <div className={`${styles.blogSection} ${styles.section}`}>
+        <ImageContainer
+          className={styles.BgAboveTheFold}
+          src={BgAboveTheFold3}
+          alt={'shadow'}
+        />
+        <div className={styles.textBlock}>
+          <SectionTitle
+            title={`${data.name} staking tutorial`}
+            subtitle={`Your ${data.symbol.toUpperCase()}s must be in a wallet or custodial account in order to use our staking services.`}
+            classNameTitle={styles.title}
+            classNameSubtitle={styles.text}
+            isGray
+          />
+        </div>
+        <div className={styles.postBlock}>
+          {articleList.map(article =>
+            <PostCard
+              key={article?.link}
+              name={data.name}
+              title={article.title}
+              isSoon={article.isSoon}
+              isIntro={article.isIntro}
+              link={article.link}
             />
           )}
         </div>
