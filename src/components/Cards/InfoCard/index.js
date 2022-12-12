@@ -1,4 +1,4 @@
-import styles from '../../styles/components/InfoCard.module.scss';
+import styles from '../../../styles/components/InfoCard.module.scss';
 import {useRef} from 'react';
 
 const InfoCard = ({title, value, isAddress}) => {

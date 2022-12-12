@@ -1,6 +1,6 @@
-import styles from '../../styles/components/PostCard.module.scss';
-import Arrow from '../Arrow';
-import {whiteColor} from '../../styles/variables.module.scss';
+import styles from '../../../styles/components/PostCard.module.scss';
+import Arrow from '../../Arrow';
+import {whiteColor} from '../../../styles/variables.module.scss';
 
 const PostCard = ({title, link, isSoon, isIntro, name}) => {
 

@@ -1,9 +1,9 @@
-import styles from '../../styles/components/ProjectCircle.module.scss';
-import ImageContainer from '../ImageContainer';
+import styles from '../../../styles/components/ProjectCircle.module.scss';
+import ImageContainer from '../../ImageContainer';
 import {useEffect, useState} from 'react';
-import {PROJECT_DATA} from '../../data/projects';
-import Arrow from '../Arrow';
-import {whiteColor} from '../../styles/variables.module.scss';
+import {PROJECT_DATA} from '../../../data/projects';
+import Arrow from '../../Arrow';
+import {whiteColor} from '../../../styles/variables.module.scss';
 import Link from 'next/link';
 
 const ProjectCircle = ({

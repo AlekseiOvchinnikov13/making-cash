@@ -1,0 +1,28 @@
+@import "../variables.module";
+
+.metricCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: max(15px, .01388em);
+  align-items: center;
+  justify-items: center;
+
+  padding: 35px max(.01388em, 10px);
+  border: 2px solid rgba($AQUAMARINE_COLOR, .2);
+  background: $CARD_BACKGROUND_COLOR;
+  box-shadow: $CARD_BOX_SHADOW;
+  backdrop-filter: blur(20px);
+  border-radius: .010416em;
+
+  .title {
+    color: $SECOND_GRAY_COLOR;
+    font-size: max(16px, .01111em);
+    text-transform: capitalize;
+  }
+
+  .text {
+    color: $WHITE_COLOR;
+    font-size: max(36px, .025em);
+    font-weight: 700;
+  }
+}

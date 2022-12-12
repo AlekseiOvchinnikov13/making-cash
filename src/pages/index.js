@@ -2,7 +2,7 @@ import {useGetProjectsQuery} from '../store/projects/projectApi';
 import {PROJECT_DATA} from '../data/projects';
 import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
-import ProjectCircle from '../components/ProjectCircle';
+import ProjectCircle from '../components/Cards/ProjectCircle';
 import BgDonut from '../../public/assets/images/donut.svg';
 import BgHalfDonut from '../../public/assets/images/half-donut.svg';
 import BgSphere from '../../public/assets/images/sphere.svg';
@@ -22,10 +22,11 @@ import contact from '../components/Coordinates/Contact';
 import {useDispatch} from 'react-redux';
 import {getPosts} from '../store/posts/postsSlice';
 import usePosts from '../hooks/usePosts';
-import PostRaw from '../components/PostRaw';
+import PostRaw from '../components/Cards/PostRaw';
 import {isMobile} from '../utils';
 import {FAQ_DATA} from '../data/faq';
-import AccordionItem from '../components/AccordionItem';
+import AccordionItem from '../components/Cards/AccordionItem';
+import {uid} from 'uid';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
@@ -82,7 +83,7 @@ const Home = () => {
           {isLoading
             ? <Loader/>
             : data.map(project =>
-              <ProjectCircle key={project.id} data={project}/>
+              <ProjectCircle key={uid()} data={project}/>
             )}
         </div>
         {isMobileState &&
@@ -134,7 +135,7 @@ const Home = () => {
             ? posts.map((post, index) =>
               index < 3 &&
               <PostRaw
-                key={post.link}
+                key={uid()}
                 data={post}
               />)
             : <Loader/>
@@ -162,7 +163,7 @@ const Home = () => {
         <SectionTitle title={'faq'}/>
         <div className={styles.accordionWrapper}>
           {FAQ_DATA.map(item =>
-            <AccordionItem key={item.label} data={item}/>
+            <AccordionItem key={uid()} data={item}/>
           )}
         </div>
       </section>

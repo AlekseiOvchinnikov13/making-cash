@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import styles from '../../styles/components/AccordionItem.module.scss';
+import styles from '../../../styles/components/AccordionItem.module.scss';
 
 const AccordionItem = ({data: {label, text}}) => {
   const [isActive, setIsActive] = useState(false);
