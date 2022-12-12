@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
-import {isBrowser} from '../../utils';
 import Head from 'next/head';
+import {isBrowser} from '../../utils';
 import Header from '../Header';
 import Footer from '../Footer';
 import styles from '../../styles/components/Layout.module.scss';

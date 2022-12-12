@@ -1,30 +1,25 @@
-import {useGetCoinInfoQuery} from '../../store/projects/projectApi';
+import {useState} from 'react';
 import {useRouter} from 'next/router';
-import styles from '../../styles/pages/Project.module.scss';
-import Loader from '../../components/Loader';
+import {uid} from 'uid';
+import {useGetCoinInfoQuery} from '../../store/projects/projectApi';
 import {PROJECT_DATA} from '../../data/projects';
+import Loader from '../../components/Loader';
 import ImageContainer from '../../components/ImageContainer';
 import LinkArrow from '../../components/LinkArrow';
-import {whiteColor} from '../../styles/variables.module.scss';
+import InfoCard from '../../components/Cards/InfoCard';
+import ReadMore from '../../components/ReadMore';
+import SectionTitle from '../../components/SectionTitle';
+import PostCard from '../../components/Cards/PostCard';
+import MetricCard from '../../components/Cards/MetricCard';
+import {isTablet} from '../../utils';
 import BgAboveTheFold from '../../../public/assets/images/bg-above-the-fold.svg';
 import BgAboveTheFold2 from '../../../public/assets/images/bg-above-the-fold2.svg';
 import BgAboveTheFold3 from '../../../public/assets/images/bg-above-the-fold3.svg';
 import BgSphere from '../../../public/assets/images/sphere.svg';
-import InfoCard from '../../components/Cards/InfoCard';
-import ReadMore from '../../components/ReadMore';
-import {useEffect, useState} from 'react';
-import SectionTitle from '../../components/SectionTitle';
-import PostCard from '../../components/Cards/PostCard';
-import {uid} from 'uid';
-import MetricCard from '../../components/Cards/MetricCard';
-import {isMobile, isTablet} from '../../utils';
-
+import {whiteColor} from '../../styles/variables.module.scss';
+import styles from '../../styles/pages/Project.module.scss';
 
 const Project = () => {
-  const [isMobileState, setIsMobileState] = useState(false);
-  useEffect(() => {
-    setIsMobileState(isMobile);
-  }, [setIsMobileState]);
   const [isMetricsOpen, setIsMetricOpen] = useState(false);
   const seeMoreHandler = () =>
     setIsMetricOpen(!isMetricsOpen);
@@ -84,8 +79,6 @@ const Project = () => {
       value: data.community_score
     },
   ];
-
-  // console.log(data);
 
   return (
     <>

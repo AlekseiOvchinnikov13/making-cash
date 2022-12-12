@@ -1,5 +1,5 @@
-import {useForm} from '@formspree/react';
 import {useState} from 'react';
+import {useForm} from '@formspree/react';
 import Arrow from '../Arrow';
 import Loader from '../Loader';
 import {whiteColor} from '../../styles/variables.module.scss';

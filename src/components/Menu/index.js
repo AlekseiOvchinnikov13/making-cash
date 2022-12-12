@@ -1,10 +1,10 @@
 import {useRef} from 'react';
-import {menu} from '../../data/menu';
-import Link from 'next/link';
 import {useRouter} from 'next/router';
+import Link from 'next/link';
+import {uid} from 'uid';
+import {menu} from '../../data/menu';
 import CalculatorButton from '../CalculatorButton';
 import styles from '../../styles/components/Menu.module.scss';
-import {uid} from 'uid';
 
 const Menu = ({isMobile}) => {
   const router = useRouter();

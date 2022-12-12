@@ -3,26 +3,25 @@ import TwitterIcon from './images/twitter.svg';
 import GeoIcon from './images/geo.svg';
 import MediumIcon from './images/medium.svg';
 
-
 export const CONTACTS_DATA = [
   {
+    img: MailIcon,
     label: 'info@making.cash',
-    link: 'mailto:info@making.cash',
-    img: MailIcon
+    link: 'mailto:info@making.cash'
   },
   {
+    img: TwitterIcon,
     label: '@_makingcash_',
     link: 'https://twitter.com/_makingcash_',
-    img: TwitterIcon
   },
   {
+    img: GeoIcon,
     label: 'planet Earth',
-    link: '#',
-    img: GeoIcon
+    link: '#'
   },
   {
+    img: MediumIcon,
     label: 'medium.com/making-cash',
-    link: 'https://medium.com/making-cash',
-    img: MediumIcon
+    link: 'https://medium.com/making-cash'
   }
 ];

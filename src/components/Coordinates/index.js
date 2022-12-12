@@ -1,7 +1,7 @@
+import {uid} from 'uid';
 import {CONTACTS_DATA} from '../../data/contacts';
 import Contact from './Contact';
 import styles from '../../styles/components/Coordinates.module.scss';
-import {uid} from 'uid';
 
 const Coordinates = () => {
   const currentYear = new Date().getFullYear();
@@ -15,6 +15,5 @@ const Coordinates = () => {
     </div>
   );
 };
-
 
 export default Coordinates;

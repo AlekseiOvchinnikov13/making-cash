@@ -1,5 +1,5 @@
-import styles from '../../../styles/components/InfoCard.module.scss';
 import {useRef} from 'react';
+import styles from '../../../styles/components/InfoCard.module.scss';
 
 const InfoCard = ({title, value, isAddress}) => {
   const copyBtnRef = useRef(null);

@@ -1,7 +1,7 @@
-import styles from '../../../styles/components/PostRaw.module.scss';
 import {cleanText} from '../../../utils';
 import LinkArrow from '../../LinkArrow';
 import {format} from 'date-fns';
+import styles from '../../../styles/components/PostRaw.module.scss';
 
 const PostRaw = ({data: {pubDate, title, description, link}}) =>
   <div className={styles.postRaw}>

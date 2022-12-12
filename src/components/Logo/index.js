@@ -1,9 +1,9 @@
-import LogoSvg from './images/logo.svg';
 import Link from 'next/link';
+import LogoSvg from './images/logo.svg';
 import ImageContainer from '../ImageContainer';
 import styles from '../../styles/components/Logo.module.scss';
 
-const Logo = () => (
+const Logo = () =>
   <Link href="/">
     <a className={styles.linkLogo}>
       <div className={styles.logo}>
@@ -13,8 +13,6 @@ const Logo = () => (
         />
       </div>
     </a>
-  </Link>
-);
-
+  </Link>;
 
 export default Logo;

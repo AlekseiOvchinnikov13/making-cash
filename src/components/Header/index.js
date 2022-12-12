@@ -1,9 +1,9 @@
+import {useEffect, useState} from 'react';
 import Menu from '../Menu';
 import Logo from '../Logo';
-import {useEffect, useState} from 'react';
+import {isMobile} from '../../utils';
 import CalculatorButton from '../CalculatorButton';
 import styles from '../../styles/components/Header.module.scss';
-import {isMobile} from '../../utils';
 
 const Header = () => {
   const [isMobileState, setIsMobileState] = useState(false);
