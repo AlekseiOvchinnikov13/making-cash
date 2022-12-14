@@ -112,6 +112,7 @@ const Project = () => {
             isLong
             text={'stake now'}
             to={link}
+            target={'_blank'}
             fillColor={whiteColor}
             className={`${styles.linkStake} buttonCommonStyle`}
           />

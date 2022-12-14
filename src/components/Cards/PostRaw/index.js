@@ -13,6 +13,7 @@ const PostRaw = ({data: {pubDate, title, description, link}}) =>
     <LinkArrow
       to={link}
       text={'Explore'}
+      target={'_blank'}
       isLong
       className={styles.exploreLink}
     />

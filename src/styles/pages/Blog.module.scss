@@ -1,0 +1,68 @@
+@import "../variables.module";
+
+.title {
+  font-family: $FONT_FAMILY_QUICKSAND;
+  font-weight: 300;
+  font-size: max(48px, .07638em);
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  color: $WHITE_COLOR;
+  -webkit-text-stroke: 2px $AQUAMARINE_COLOR;
+  filter: blur(1px);
+  text-shadow: 0 0 60px $AQUAMARINE_COLOR, 0 0 30px $AQUAMARINE_COLOR, 0 0 10px $AQUAMARINE_COLOR;
+  margin: .90909em 0;
+}
+
+.blogCardsWrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 0 .13888em;
+
+  .leftColumn {
+    gap: .0825em;
+    grid-row: 1 / span 2;
+  }
+
+  .rightColumn {
+    gap: .0625em;
+  }
+
+  .column {
+    display: grid;
+  }
+}
+
+.donut, .sphere, .BgAboveTheFold {
+  position: absolute;
+  z-index: -1;
+}
+
+.donut {
+  width: 700px;
+  height: 820px;
+  left: -20%;
+  bottom: 20%;
+}
+
+.sphere {
+  width: 800px;
+  height: 800px;
+  right: -10%;
+  top: 5%;
+  transform: scale(-1, 1);
+}
+
+.BgAboveTheFold {
+  width: 100%;
+  height: 900px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (max-width: 1200px) {
+  .blogCardsWrapper {
+    grid-template-columns: 1fr;
+  }
+}

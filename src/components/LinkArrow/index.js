@@ -3,9 +3,9 @@ import Arrow from '../Arrow';
 import {aquamarineColor} from '../../styles/variables.module.scss';
 import styles from '../../styles/components/LinkArrow.module.scss';
 
-const LinkArrow = ({to, text, className, direction, isLong, ...other}) =>
+const LinkArrow = ({to, text, className, direction, isLong, target, ...other}) =>
   <Link href={to}>
-    <a className={`${styles.linkArrow} ${className}`} target={'_blank'}>
+    <a className={`${styles.linkArrow} ${className}`} target={target}>
       {text}
       <Arrow
         direction={direction ? direction : 'right'}

@@ -140,13 +140,12 @@ const Home = () => {
             : <Loader/>
           }
         </div>
-        {/*{isMobileState &&
-          <LinkArrow
-            text={'see all'}
-            to={'/blog'}
-            isLong={false}
-            className={styles.blogPageArrow}
-          />}*/}
+        <LinkArrow
+          text={'see all'}
+          to={'/blog'}
+          isLong={false}
+          className={styles.blogPageArrow}
+        />
       </section>
       <section className={`${styles.section} ${styles.faqSection}`} id={'faq'}>
         <ImageContainer
