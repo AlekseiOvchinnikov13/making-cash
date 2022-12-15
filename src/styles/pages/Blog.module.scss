@@ -64,5 +64,13 @@
 @media (max-width: 1200px) {
   .blogCardsWrapper {
     grid-template-columns: 1fr;
+
+    .leftColumn {
+      margin-bottom: 30px;
+    }
+
+    .column {
+      gap: 30px;
+    }
   }
 }

@@ -15,12 +15,13 @@ const BlogCard = ({data: {title, link, thumbnail, pubDate, description, categori
         : 150)}...`;
 
   return (
-    <div className={`${styles.blogCard} ${isEven ? styles.shortCard : ''}`}>
+    <div className={styles.blogCard}>
       <ImageContainer
         className={styles.image}
-        alt={''}
-        src={`/${thumbnail}`}
-        objectFit={'fill'}
+        alt={title}
+        src={thumbnail}
+        objectFit={'cover'}
+        unoptimized
       />
       <div className={styles.textWrapper}>
         <h6 className={styles.title}>{title}</h6>

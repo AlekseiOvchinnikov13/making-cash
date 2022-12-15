@@ -16,7 +16,7 @@ const Blog = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getPosts());
+    posts?.length < 1 && dispatch(getPosts());
   }, [dispatch]);
 
   return (
