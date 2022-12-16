@@ -1,0 +1,79 @@
+@import "../../variables.module";
+
+.selector {
+  position: relative;
+
+  .value {
+    font-weight: 700;
+    font-size: max(.01944em, 18px);
+    color: $AQUAMARINE_COLOR;
+    padding: max(12px, .8571em) max(12px, .71428em);
+    box-shadow: $CARD_BOX_SHADOW;
+    backdrop-filter: blur(20px);
+
+    width: 100%;
+    transition: all .3s ease-in-out;
+  }
+
+  .selectedValue {
+    border-radius: .28571em;
+    border: 2px solid rgba($AQUAMARINE_COLOR, .2);
+    background: $INPUTS_BACKGROUND_COLOR_DESKTOP;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+
+    .arrow {
+      height: max(12px, .71428em);
+      width: max(8px, .4285em);
+    }
+  }
+
+  .list {
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0;
+
+    transition: all .3s ease-in-out;
+
+    display: grid;
+    justify-items: flex-start;
+
+    .value {
+      border: none;
+      justify-self: flex-start;
+      background-color: rgba($BLACK_COLOR, .7);
+    }
+
+    .value + .value {
+      border-top: 2px solid rgba($AQUAMARINE_COLOR, .2);
+    }
+  }
+}
+
+.selectorOpen {
+  .selectedValue {
+    border-radius: .28571em .28571em 0 0;
+  }
+
+  .list {
+    height: max(.190972em, 275px);
+    border: 2px solid rgba($AQUAMARINE_COLOR, .2);
+    border-radius: 0 0 .005555em .005555em;
+  }
+}
+
+@media (max-width: 500px) {
+  .selector {
+    .selectedValue {
+      font-weight: 400;
+    }
+  }
+}
+

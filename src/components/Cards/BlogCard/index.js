@@ -8,7 +8,7 @@ const BlogCard = ({data: {title, link, thumbnail, pubDate, description, categori
   const text = `${cleanText(description)
     .slice(0, isMobile
       ? isSmallMobile
-        ? 100
+        ? 75
         : 250
       : isEven
         ? 250

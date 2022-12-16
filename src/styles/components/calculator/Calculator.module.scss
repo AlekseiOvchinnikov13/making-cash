@@ -1,0 +1,41 @@
+@import "../../variables.module";
+
+.calculator {
+  position: relative;
+  margin-top: max(.06944em, 30px);
+  padding: max(24px, .02777em) max(12px, .02777em);
+
+  background: $GRADIENT_DARK_BLUE;
+  box-shadow: $CARD_BOX_SHADOW;
+  backdrop-filter: blur(20px);
+  border-radius: 8px;
+  border: 2px solid rgba($AQUAMARINE_COLOR, .2);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, .0625em);
+  grid-auto-rows: .083333em;
+  gap: .01666em .01458em;
+
+  .bgAboveTheFold {
+    position: absolute;
+    width: 200%;
+    top: 0;
+    z-index: -1;
+    transform: translate(-25%, -20%);
+    height: .625em;
+  }
+
+  .earningStakeBlock {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-column: 1 / span 2;
+
+    .earningWrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+

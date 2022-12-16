@@ -1,0 +1,67 @@
+@import "../../variables.module";
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+
+  justify-items: flex-end;
+  align-items: center;
+
+  .textWrapper {
+    font-size: max(.02083em, 18px);
+    color: $PRIMARY_GRAY_COLOR;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    .active {
+      color: $AQUAMARINE_COLOR;
+    }
+
+    span {
+      transition: color 3s ease-in-out;
+    }
+  }
+
+  .toggleItem {
+    position: relative;
+    background: $AQUAMARINE_COLOR;
+    border-radius: 30px;
+    width: max(80px, .055555em);
+    height: max(40px, .027777em);
+
+    .circle {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      //right: auto;
+
+      outline: 2px solid $AQUAMARINE_COLOR;
+      background: $WHITE_COLOR;
+      width: max(32px, .02222em);
+      height: max(32px, .02222em);
+      border-radius: 50%;
+
+      transition: all 1.3s ease-in-out;
+    }
+  }
+
+  .secondState {
+    .circle {
+      right: 2px;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .toggle {
+    .textWrapper {
+      .inactive {
+        font-weight: 400;
+      }
+    }
+  }
+
+}
