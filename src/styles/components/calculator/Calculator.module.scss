@@ -7,7 +7,7 @@
 
   background: $GRADIENT_DARK_BLUE;
   box-shadow: $CARD_BOX_SHADOW;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   border: 2px solid rgba($AQUAMARINE_COLOR, .2);
 
@@ -28,14 +28,68 @@
 
   .earningStakeBlock {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 4fr 2fr;
     grid-column: 1 / span 2;
+    gap: .02083em;
 
     .earningWrapper {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: max(.00833em, 12px);
+    }
+  }
+
+  .stakeBtn {
+    font-size: max(16px, .01805em);
+    font-weight: 700;
+    border-radius: max(.30769em, 8px);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .arrow {
+      margin-left: 5px;
+      transition: all .3s ease-in-out;
+    }
+
+    &:hover {
+      .arrow {
+        margin-left: 15px;
+      }
     }
   }
 }
 
+@media (max-width: 1024px) {
+  .calculator {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    grid-auto-rows: unset;
+    gap: 10px;
+
+    .earningStakeBlock {
+      grid-template-columns: 1fr;
+      grid-column: 1;
+      gap: 20px;
+
+      .earningWrapper {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+    }
+
+    .stakeBtn {
+      line-height: 3em;
+      font-weight: 400;
+      grid-row: 1;
+      margin-top: 10px;
+
+      .arrow {
+        margin-left: 7px;
+      }
+    }
+  }
+}
 

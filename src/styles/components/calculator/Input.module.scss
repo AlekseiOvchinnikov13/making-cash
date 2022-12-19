@@ -1,0 +1,57 @@
+@import "../../variables.module";
+
+.inputWrapper {
+  padding: max(12px, .01666em);
+  backdrop-filter: blur(10px);
+  box-shadow: $CARD_BOX_SHADOW;
+  background: $GRADIENT_AQUA_BLUE;
+  border: 1px solid rgba($AQUAMARINE_COLOR, .2);
+  border-radius: max(.00555em, 8px);
+  display: flex;
+  align-items: center;
+  gap: max(20px, .01388em);
+
+  .symbol, .input {
+    font-family: $FONT_FAMILY_PLAY;
+    font-size: max(20px, .02222em);
+  }
+
+  .symbol {
+    color: $GRAY_COLOR;
+    text-transform: uppercase;
+  }
+
+  .input {
+    color: $SECOND_GRAY_COLOR;
+    font-weight: 700;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 85%;
+
+    -moz-appearance: textfield;
+    appearance: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .inputWrapper {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    .symbol {
+      color: $LIGHT_GRAY_COLOR;
+    }
+  }
+}
+

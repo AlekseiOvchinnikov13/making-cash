@@ -26,7 +26,7 @@ import IntersectLeft from '../../public/assets/images/Intersect-left.svg';
 import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-ellipse-projects.svg';
 import BgLightEllipseProjects from '../../public/assets/images/light-ellipse-projects.svg';
 import styles from '../styles/pages/Home.module.scss';
-// import Calculator from '../components/Calculator';
+import Calculator from '../components/Calculator';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
@@ -166,13 +166,13 @@ const Home = () => {
           )}
         </div>
       </section>
-      {/*<section className={`${styles.section}`} id={'calculator'}>
+      <section className={`${styles.section}`} id={'calculator'}>
         <SectionTitle
           title={'calculator'}
           subtitle={'You can choose the most profitable coin for yourself'}
         />
         <Calculator/>
-      </section>*/}
+      </section>
       <section className={`${styles.section}`} id={'contact'}>
         <SectionTitle
           title={'contact'}

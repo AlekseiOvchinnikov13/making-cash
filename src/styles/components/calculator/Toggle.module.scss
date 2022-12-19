@@ -20,7 +20,7 @@
     }
 
     span {
-      transition: color 3s ease-in-out;
+      transition: color .3s ease-in-out;
     }
   }
 
@@ -30,27 +30,32 @@
     border-radius: 30px;
     width: max(80px, .055555em);
     height: max(40px, .027777em);
+    border: none;
 
     .circle {
       position: absolute;
-      top: 2px;
-      left: 2px;
-      //right: auto;
+      top: 4px;
+      left: 4px;
+      right: auto;
 
-      outline: 2px solid $AQUAMARINE_COLOR;
       background: $WHITE_COLOR;
       width: max(32px, .02222em);
       height: max(32px, .02222em);
       border-radius: 50%;
 
-      transition: all 1.3s ease-in-out;
+      transition: all .3s ease-in;
+    }
+
+    .secondState {
+      left: calc(50% + 4px);
     }
   }
+}
 
-  .secondState {
-    .circle {
-      right: 2px;
-      left: auto;
+@media (max-width: 1024px) {
+  .toggle {
+    .textWrapper {
+      justify-self: flex-start;
     }
   }
 }

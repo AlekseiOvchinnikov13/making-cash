@@ -1,0 +1,65 @@
+@import "../../variables.module";
+
+.earnCard {
+  display: grid;
+  align-items: center;
+  gap: max(8px, .00555em);
+
+  border: 1px solid rgba($AQUAMARINE_COLOR, .2);
+  background: $GRADIENT_AQUA_BLUE;
+  box-shadow: $CARD_BOX_SHADOW;
+  backdrop-filter: blur(10px);
+  border-radius: max(8px, .00555em);
+  padding: 16px max(12px, .01388em);
+
+  .label {
+    font-weight: 700;
+    font-size: max(18px, .01388em);
+    color: $SECOND_GRAY_COLOR;
+  }
+
+  .value {
+    font-family: $FONT_FAMILY_PLAY;
+    font-size: max(16px, .01111em);
+    font-weight: 400;
+    color: $PRIMARY_GRAY_COLOR;
+    text-transform: uppercase;
+  }
+
+  .valueActive {
+    font-size: max(20px, .01388em);
+    font-weight: 700;
+    color: $AQUAMARINE_COLOR;
+  }
+}
+
+@media (max-width: 1024px) {
+  .earnCard {
+    grid-template-columns: 1fr 1fr;
+
+    .label {
+      grid-row: 2;
+      font-weight: 400;
+    }
+
+    .value {
+      color: $LIGHT_GRAY_COLOR;
+      justify-self: flex-end;
+    }
+
+    .valueActive {
+      color: $LIGHT_BLUE_COLOR;
+      justify-self: flex-start;
+    }
+  }
+
+  .earnCardUsd {
+    .value {
+      justify-self: flex-start;
+    }
+
+    .valueActive {
+      justify-self: flex-end;
+    }
+  }
+}

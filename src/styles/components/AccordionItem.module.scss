@@ -3,7 +3,7 @@
 .accordionItem {
   background: $CARD_BACKGROUND_COLOR;
   box-shadow: $CARD_BOX_SHADOW;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border-radius: 8px;
   border: 2px solid rgba($AQUAMARINE_COLOR, .2);
 
