@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import {uid} from 'uid';
-import useProjects from '../../../hooks/useProjects';
+import {useGetProjectsQuery} from '../../../store/projects/projectApi';
 import Loader from '../../Loader';
 import Arrow from '../../Arrow';
+import {PROJECT_DATA} from '../../../data/projects';
 import styles from '../../../styles/components/calculator/Selector.module.scss';
 
-const Selector = ({activeCurrency, onClick}) => {
-  const dataArray = useProjects();
+const Selector = ({activeCurrency, onClick, isProject}) => {
+  const {data: dataArray, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
   const [isOpen, setIsOpen] = useState(false);
   const onClickHandler = e => {
     setIsOpen(!isOpen);
@@ -14,20 +15,22 @@ const Selector = ({activeCurrency, onClick}) => {
     onClick(clickedCurrency);
   };
 
-  if (!activeCurrency || !dataArray) return <Loader/>;
+  if (!activeCurrency || isLoading) return <Loader/>;
 
   return (
     <div className={`${styles.selector} ${isOpen ? styles.selectorOpen : ''}`}>
       <button
         className={`${styles.selectedValue} ${styles.value}`}
         onClick={() => setIsOpen(!isOpen)}
+        disabled={isProject}
       >
         {activeCurrency.name}
-        <Arrow
-          isLong={false}
-          direction={'down'}
-          className={styles.arrow}
-        />
+        {!isProject &&
+          <Arrow
+            isLong={false}
+            direction={'down'}
+            className={styles.arrow}
+          />}
       </button>
       <div className={styles.list}>
         {dataArray

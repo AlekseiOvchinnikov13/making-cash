@@ -11,6 +11,7 @@ import ReadMore from '../../components/ReadMore';
 import SectionTitle from '../../components/SectionTitle';
 import PostCard from '../../components/Cards/PostCard';
 import MetricCard from '../../components/Cards/MetricCard';
+import Calculator from '../../components/Calculator';
 import {isTablet} from '../../utils';
 import BgAboveTheFold from '../../../public/assets/images/bg-above-the-fold.svg';
 import BgAboveTheFold2 from '../../../public/assets/images/bg-above-the-fold2.svg';
@@ -201,6 +202,13 @@ const Project = () => {
             className={styles.seeMore}
           />
         }
+      </div>
+      <div className={`${styles.calculatorSection} ${styles.section}`}>
+        <SectionTitle
+          title={`${data.name.toUpperCase()} REWARDS CALCULATOR`}
+          subtitle={`How many dollars do you want to put in for ${data.name}?`}
+        />
+        <Calculator projectId={data.id} isProject/>
       </div>
     </>
   );

@@ -12,7 +12,7 @@ const EarnCard = ({isCrypto, activeCurrency, cryptoValue, usdValue, data: {count
         $&nbsp;{`${(usdValue * count * apy / 100).toFixed(4)}`}
       </p>
       <p className={`${styles.value} ${!isCrypto ? styles.valueActive : ''}`}>
-        {activeCurrency.symbol}&nbsp;${(cryptoValue * count * apy / 100).toFixed(4)}
+        {activeCurrency.symbol}&nbsp;{(cryptoValue * count * apy / 100).toFixed(4)}
       </p>
     </div>
   );

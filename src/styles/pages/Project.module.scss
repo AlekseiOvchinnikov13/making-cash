@@ -192,6 +192,11 @@
   }
 }
 
+.calculatorSection {
+  display: grid;
+  gap: max(30px, .04861em);
+}
+
 @media (max-width: 900px) {
   .mainSection {
     .BgAboveTheFold {

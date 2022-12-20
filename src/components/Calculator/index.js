@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {uid} from 'uid';
-import useProjects from '../../hooks/useProjects';
+import {useGetProjectsQuery} from '../../store/projects/projectApi';
 import ImageContainer from '../ImageContainer';
 import Loader from '../Loader';
 import Selector from './Selector';
@@ -9,20 +9,21 @@ import Input from './Input';
 import EarnCard from './EarnCard';
 import Arrow from '../Arrow';
 import {EARNING_CARDS_DATA} from '../../data/calculator';
+import {PROJECT_DATA} from '../../data/projects';
 import BgAboveTheFold from '../../../public/assets/images/bg-above-the-fold5.svg';
 import {whiteColor} from '../../styles/variables.module.scss';
 import styles from '../../styles/components/calculator/Calculator.module.scss';
-import {PROJECT_DATA} from '../../data/projects';
 
-const Calculator = ({projectId = 'solana'}) => {
-  const dataArray = useProjects();
+const Calculator = ({projectId = 'solana', isProject}) => {
+  const {data: dataArray, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
   const [activeCurrency, setActiveCurrency] = useState(false);
 
+  // console.log('dataArray', dataArray);
   const setActiveCurrencyHandler = currency =>
     setActiveCurrency(currency);
 
   useEffect(() => {
-    setActiveCurrency(dataArray?.find(currency => currency.id === projectId));
+    dataArray && setActiveCurrency(dataArray?.find(currency => currency.id === projectId));
   }, [dataArray, projectId]);
 
   const [isCrypto, setIsCrypto] = useState(true);
@@ -53,10 +54,10 @@ const Calculator = ({projectId = 'solana'}) => {
   const [stakeLink, setStakeLink] = useState();
 
   useEffect(() => {
-    setStakeLink(PROJECT_DATA.find(project => project.id === activeCurrency.id)?.link);
+    setStakeLink(PROJECT_DATA.find(project => project.id === activeCurrency?.id)?.link);
   }, [activeCurrency?.id]);
 
-  if (!dataArray || !activeCurrency) return <Loader/>;
+  if (isLoading || !activeCurrency) return <Loader/>;
 
   return (
     <div className={styles.calculator}>
@@ -68,6 +69,7 @@ const Calculator = ({projectId = 'solana'}) => {
       <Selector
         activeCurrency={activeCurrency}
         onClick={setActiveCurrencyHandler}
+        isProject={isProject}
       />
       <Toggle
         activeCurrency={activeCurrency}

@@ -14,6 +14,7 @@ import AccordionItem from '../components/Cards/AccordionItem';
 import Subtitle from '../components/Subtitle';
 import Loader from '../components/Loader';
 import ProjectCircle from '../components/Cards/ProjectCircle';
+import Calculator from '../components/Calculator';
 import {isMobile} from '../utils';
 import {FAQ_DATA} from '../data/faq';
 import {PROJECT_DATA} from '../data/projects';
@@ -26,7 +27,6 @@ import IntersectLeft from '../../public/assets/images/Intersect-left.svg';
 import BgAquamarineEllipseProjects from '../../public/assets/images/aquamarine-ellipse-projects.svg';
 import BgLightEllipseProjects from '../../public/assets/images/light-ellipse-projects.svg';
 import styles from '../styles/pages/Home.module.scss';
-import Calculator from '../components/Calculator';
 
 const Home = () => {
   const {data, isLoading} = useGetProjectsQuery(PROJECT_DATA.map(item => item.id));
