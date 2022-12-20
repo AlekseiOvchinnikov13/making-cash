@@ -1,8 +1,8 @@
-import styles from '../../../styles/components/BlogCard.module.scss';
+import {format} from 'date-fns';
 import ImageContainer from '../../ImageContainer';
 import LinkArrow from '../../LinkArrow';
 import {cleanText, isMobile, isSmallMobile} from '../../../utils';
-import {format} from 'date-fns';
+import styles from '../../../styles/components/BlogCard.module.scss';
 
 const BlogCard = ({data: {title, link, thumbnail, pubDate, description, categories}, isEven}) => {
   const text = `${cleanText(description)

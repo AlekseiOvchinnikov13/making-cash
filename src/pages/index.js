@@ -97,7 +97,7 @@ const Home = () => {
       <section className={`${styles.section} ${styles.aboutSection}`} id={'about-us'}>
         <SectionTitle
           title={'we are'}
-          subtitle={'We`ve started launching validators in&nbsp;2019 and now we`ve working with more then 13&nbsp;project'}
+          subtitle={'We`ve started launching validators in&nbsp;2019 and now we`ve working with more then 13&nbsp;projects'}
         />
         <SectionTitle
           isGray
