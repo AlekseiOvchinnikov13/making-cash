@@ -18,6 +18,7 @@
     gap: max(10px, .013888em);
     padding: max(.013888em, 15px) 20px;
 
+    border-radius: 0 0 max(8px, .0125em) max(8px, .0125em);
     background: $GRADIENT_DARK_BLUE;
     box-shadow: $CARD_BOX_SHADOW;
     backdrop-filter: blur(10px);

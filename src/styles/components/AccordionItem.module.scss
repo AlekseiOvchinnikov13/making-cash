@@ -9,6 +9,10 @@
 
   padding: .020833em .047222em;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .header {
     display: flex;
     align-items: center;
@@ -27,13 +31,10 @@
       height: max(20px, .01388em);
 
       font-size: 1em;
-      border: none;
-      background: transparent;
       position: relative;
 
       &:before, &:after {
         top: 50%;
-
         content: '';
         position: absolute;
         width: max(12px, .00833em);

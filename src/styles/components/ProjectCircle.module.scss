@@ -3,12 +3,12 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, -30%, 0);
+    transform: translate3d(0, -30%, 0) rotate(90deg);
   }
 
   to {
     opacity: 1;
-    transform: translate3d(0, 30%, 0);
+    transform: translate3d(0, 30%, 0) rotate(90deg);
   }
 }
 
@@ -83,7 +83,7 @@
   }
 
   .projectLink {
-    padding: .0069em;
+    //padding: .0069em;
     animation: fadeInUp 2.5s ease-in-out infinite;
   }
 }

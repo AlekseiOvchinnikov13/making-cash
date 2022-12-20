@@ -6,13 +6,13 @@ const AccordionItem = ({data: {label, text}}) => {
   const onClickHandler = () => setIsActive(!isActive);
 
   return (
-    <div className={`${styles.accordionItem} ${isActive ? styles.accordionItemActive : ''}`}>
+    <buton
+      className={`${styles.accordionItem} ${isActive ? styles.accordionItemActive : ''}`}
+      onClick={onClickHandler}
+    >
       <div className={styles.header}>
         <p className={styles.title}>{label}</p>
-        <button
-          className={styles.arrowBtn}
-          onClick={onClickHandler}
-        />
+        <div className={styles.arrowBtn}/>
       </div>
       <p
         className={styles.content}
@@ -20,7 +20,7 @@ const AccordionItem = ({data: {label, text}}) => {
           __html: text
         }}
       />
-    </div>
+    </buton>
   );
 };
 

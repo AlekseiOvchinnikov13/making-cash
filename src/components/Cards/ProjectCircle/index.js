@@ -20,20 +20,18 @@ const ProjectCircle = ({
   }, [id]);
 
   return (
-    <div className={styles.projectCircle}>
-      <ImageContainer
-        className={styles.img}
-        src={image}
-        alt={name}
-      />
-      <p className={styles.projectTitle}>{name}</p>
-      <p className={styles.apy}>{projectStaticData?.apy ? projectStaticData.apy : 'soon'}</p>
-      <Link href={`projects/${id}`}>
-        <a className={styles.projectLink}>
-          <Arrow isLong={false} direction={'down'} fillColor={whiteColor}/>
-        </a>
-      </Link>
-    </div>
+    <Link href={`projects/${id}`}>
+      <a className={styles.projectCircle}>
+        <ImageContainer
+          className={styles.img}
+          src={image}
+          alt={name}
+        />
+        <p className={styles.projectTitle}>{name}</p>
+        <p className={styles.apy}>{projectStaticData?.apy ? projectStaticData.apy : 'soon'}</p>
+        <Arrow isLong={false} fillColor={whiteColor} className={styles.projectLink}/>
+      </a>
+    </Link>
   );
 };
 

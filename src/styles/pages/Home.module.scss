@@ -180,6 +180,12 @@
 }
 
 @media (max-width: 1024px) {
+  .topSection {
+    .title {
+      text-shadow: 0 0 30px $AQUAMARINE_COLOR, 0 0 15px $AQUAMARINE_COLOR, 0 0 10px $AQUAMARINE_COLOR;
+      -webkit-text-stroke: 1px $AQUAMARINE_COLOR;
+    }
+  }
   .projectSection {
     .projectWrapper {
       grid-template-rows: repeat(2, auto);
@@ -213,7 +219,7 @@
 @media (max-width: 910px) {
   .projectSection {
     .projectWrapper {
-      div:nth-child(n+7) {
+      a:nth-child(n+7) {
         visibility: hidden;
         opacity: 0;
       }
@@ -225,7 +231,7 @@
   }
   .projectSectionOpen {
     .projectWrapper {
-      div:nth-child(n+7) {
+      a:nth-child(n+7) {
         visibility: visible;
         opacity: 1;
       }
@@ -243,7 +249,7 @@
 @media (max-width: 650px) {
   .projectSection {
     .projectWrapper {
-      div:nth-child(n+5) {
+      a:nth-child(n+5) {
         visibility: hidden;
         opacity: 0;
       }
@@ -255,7 +261,7 @@
   }
   .projectSectionOpen {
     .projectWrapper {
-      div:nth-child(n+5) {
+      a:nth-child(n+5) {
         visibility: visible;
         opacity: 1;
       }
