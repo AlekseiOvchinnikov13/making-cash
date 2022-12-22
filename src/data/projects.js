@@ -97,7 +97,7 @@ export const PROJECT_DATA = [
     fee: '3%',
     apy: '15%',
     basicInfoList: {
-      'Protocol Category': 'Layer 2',
+      'Protocol Category': 'Layer 1',
       'Staking Type': 'PoS',
       'Governance': 'Validator vote',
       'Validator Address': 'cro1vk5zc056nfngucy69eyveupytkhkr2yajf3vpn',
