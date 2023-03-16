@@ -1,18 +1,28 @@
-import {useState} from 'react';
-import {useForm} from '@formspree/react';
+import { useState, useCallback } from 'react';
+import { useForm } from '@formspree/react';
 import Arrow from '../Arrow';
 import Loader from '../Loader';
-import {whiteColor} from '../../styles/variables.module.scss';
+import { whiteColor } from '../../styles/variables.module.scss';
 import styles from '../../styles/components/ContactForm.module.scss';
 
 const ContactForm = () => {
   const [state, handleSubmit] = useForm('mzbwbkla');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [checked, setChecked] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    message: '',
+    subscribe: false,
+  });
 
-  if (state.submitting) return <Loader/>;
+  const handleInputChange = useCallback((e) => {
+    const { name, value, type, checked } = e.target;
+    setFormValues((prevValues) => ({
+      ...prevValues,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  }, []);
+
+  if (state.submitting) return <Loader />;
 
   if (state.succeeded) {
     return (
@@ -23,17 +33,14 @@ const ContactForm = () => {
   }
 
   return (
-    <form
-      className={styles.contactForm}
-      onSubmit={handleSubmit}
-    >
+    <form className={styles.contactForm} onSubmit={handleSubmit}>
       <input
         id="name"
         type="text"
         name="name"
         placeholder="Your Name"
-        value={name}
-        onChange={e => setName(e.target.value)}
+        value={formValues.name}
+        onChange={handleInputChange}
         required
         className={`${styles.nameInput} ${styles.input}`}
       />
@@ -42,8 +49,8 @@ const ContactForm = () => {
         type="email"
         name="email"
         placeholder="Your Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+        value={formValues.email}
+        onChange={handleInputChange}
         required
         className={`${styles.emailInput} ${styles.input}`}
       />
@@ -52,8 +59,8 @@ const ContactForm = () => {
         name="message"
         placeholder={'Message'}
         rows={4}
-        value={message}
-        onChange={e => setMessage(e.target.value)}
+        value={formValues.message}
+        onChange={handleInputChange}
         required
         className={`${styles.messageInput} ${styles.input}`}
       />
@@ -63,8 +70,8 @@ const ContactForm = () => {
             id="subscribe"
             name="subscribe"
             type="checkbox"
-            checked={checked}
-            onChange={() => setChecked(!checked)}
+            checked={formValues.subscribe}
+            onChange={handleInputChange}
             className={`${styles.input} ${styles.subscribeInput}`}
           />
           {'I consent to receive commercial information in the form of a newsletter'}
@@ -75,7 +82,7 @@ const ContactForm = () => {
           className={`${styles.submitBtn} buttonCommonStyle`}
         >
           Send
-          <Arrow fillColor={whiteColor} className={styles.arrow}/>
+          <Arrow fillColor={whiteColor} className={styles.arrow} />
         </button>
       </div>
     </form>
