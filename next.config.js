@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['assets.coingecko.com', 'cdn-images-1.medium.com', 'miro.medium.com']
+    domains: ['assets.coingecko.com', 'cdn-images-1.medium.com', 'coin-images.coingecko.com', 'miro.medium.com']
   }
 };
 

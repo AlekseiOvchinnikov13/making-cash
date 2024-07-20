@@ -46,29 +46,6 @@ export const PROJECT_DATA = [
     ]
   },
   {
-    id: 'the-graph',
-    link: 'https://www.maplenodes.com/graph/indexer/0x55F3DCDaf0b73f7f0c761a9070d8865F37986e2C',
-    fee: '10%',
-    apy: '10%',
-    basicInfoList: {
-      'Protocol Category': 'Layer 2',
-      'Staking Type': 'dPoS',
-      'Governance': 'Validator vote',
-      'Validator Address': '0x55F3DCDaf0b73f7f0c761a9070d8865F37986e2C',
-    },
-    articleList: [
-      {
-        link: 'https://medium.com/making-cash/introducing-the-graph-ad230244c9f3',
-        title: 'What Google does for search, The Graph does for blockchains',
-        isIntro: true
-      },
-      {
-        link: 'https://medium.com/making-cash/how-to-stake-grt-making-cash-validator-981d065c7129',
-        title: 'with Metamask Browser Extension'
-      }
-    ]
-  },
-  {
     id: 'oasis-network',
     link: 'https://oasismonitor.com/validator/oasis1qp6fzgx9zhamsk6c77cwzjeme06xwswffvhk6js2',
     fee: '19%',
@@ -205,8 +182,31 @@ export const PROJECT_DATA = [
         title: 'via Keplr wallet'
       }
     ]
-  },
-  {
+  }
+  /*{
+    id: 'the-graph',
+    link: 'https://www.maplenodes.com/graph/indexer/0x55F3DCDaf0b73f7f0c761a9070d8865F37986e2C',
+    fee: '10%',
+    apy: '10%',
+    basicInfoList: {
+      'Protocol Category': 'Layer 2',
+      'Staking Type': 'dPoS',
+      'Governance': 'Validator vote',
+      'Validator Address': '0x55F3DCDaf0b73f7f0c761a9070d8865F37986e2C',
+    },
+    articleList: [
+      {
+        link: 'https://medium.com/making-cash/introducing-the-graph-ad230244c9f3',
+        title: 'What Google does for search, The Graph does for blockchains',
+        isIntro: true
+      },
+      {
+        link: 'https://medium.com/making-cash/how-to-stake-grt-making-cash-validator-981d065c7129',
+        title: 'with Metamask Browser Extension'
+      }
+    ]
+  },*/
+  /*{
     id: 'dock',
     link: 'https://dock.subscan.io/waiting/3HoSFjDAyfygHTFC6EWgzXvKStnZfrAWTdgfCqdohMP1MtG9',
     fee: '12%',
@@ -227,7 +227,7 @@ export const PROJECT_DATA = [
         isSoon: true
       }
     ]
-  },
+  },*/
   /*{
   id: 'centrifuge',
   address: '',
